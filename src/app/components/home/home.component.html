@@ -1,0 +1,16 @@
+@if(items.length === 0) {
+    <h2>No Data Added...</h2>
+} @else {
+    <div class="card-container">
+        @for (item of items; track $index) {
+            
+            <div class="card pointer" style="width: 18rem;" (click)="navigateToSnippet(item.id, item)">
+                <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">{{item.snippet}}</p>
+                </div>
+            </div>
+            <hr />
+        }
+    </div>
+}

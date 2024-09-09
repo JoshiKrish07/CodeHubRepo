@@ -1,0 +1,27 @@
+<div>
+    <!-- <nav>
+        <h2><a routerLink = '/' routerLinkActive="active">CodeHubRepo</a></h2>
+            <ul>
+                <li><a routerLink = '/create-snippet' routerLinkActive="active">Create Code</a></li>
+                <li id="logoutBtn" (click)="logOut()" [hidden]="!authService.isAuthenticated()">LogOut</li>
+                <li><a routerLink= "/about" routerLinkActive="active">About</a></li>
+                <li><a routerLink = '/login' routerLinkActive="active" [hidden]="authService.isAuthenticated()">Sign In</a></li>
+                <li><a routerLink = '/register' routerLinkActive="active" [hidden]="authService.isAuthenticated()">Sign Up</a></li>
+            </ul>
+    </nav> -->
+
+    <nav>
+        <h2><a routerLink = '/' routerLinkActive="active">CodeHubRepo</a></h2>
+            <ul>
+                <li><a routerLink = '/create-snippet' routerLinkActive="active">Create Code</a></li>
+                @if (authService.isAuthenticated()) {
+                    <li id="logoutBtn" (click)="logOut()">LogOut</li>
+                } @else {
+                    <li><a routerLink = '/login' routerLinkActive="active" >Sign In</a></li>
+                    <li><a routerLink = '/register' routerLinkActive="active" >Sign Up</a></li>
+                }
+                <li><a routerLink= "/about" routerLinkActive="active">About</a></li>
+            </ul>
+    </nav>
+    <hr />
+</div>

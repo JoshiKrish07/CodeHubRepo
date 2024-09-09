@@ -1,0 +1,11 @@
+.container {
+    background-color: aqua;
+    margin-left: 42%;
+    margin-top: 10%;
+    width: 240px;
+    height: 100px;
+}
+
+span {
+    color: red;
+}

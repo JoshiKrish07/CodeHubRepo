@@ -1,0 +1,17 @@
+<form [formGroup]="snippetForm">
+    <div class="form-group">
+      <label for="inputTitle">Title</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="Enter title" [formControl]="title">
+      <!-- <span>{{!email.valid && !email.untouched ? "*Enter Correct Email" : ""}}</span> -->
+      <span [hidden]="title.valid || title.untouched">*Enter Correct Title</span>
+
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="inputSnippet">Snippet</label>
+      <textarea type="text" class="form-control text-area" id="inputSnippet" placeholder="Enter Snippet..." [formControl]="snippet"></textarea>
+      <span [hidden]="snippet.valid || snippet.untouched">*Please enter Snippet</span>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary" [disabled]="!snippetForm.valid" (click)="saveSnippet()">{{isUpdate ? "Update" : "Save"}}</button>
+  </form>
